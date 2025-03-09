@@ -1,0 +1,12 @@
+[
+    {
+        "Ambiente":"COCINA",
+        "Tarea":"DESINFECTAR",
+        "Responsable":"ANDY"
+    },
+    {
+        "Ambiente":"COCINA",
+        "Tarea":"BARRER",
+        "Responsable":"ANDY"
+    }
+]
