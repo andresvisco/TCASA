@@ -12,7 +12,7 @@ def cargar_datos():
         with open(DATA_FILE, 'r') as f:
             return pd.DataFrame(json.load(f))
     else:
-        return pd.DataFrame({'Ambiente': ["COCINA"], 'Tarea': ["DESINFECTAR"], 'Responsable': ["ANDY"]})
+        return pd.DataFrame({'Ambiente': ["COCINA"], 'Tarea': ["DESINFECTAR"], 'Responsable': ["ANDY"], 'Fecha':["20-03-2025"]})
 
 # Función para guardar datos en JSON
 def guardar_datos(df):
@@ -30,10 +30,11 @@ def main():
         ambiente = st.text_input('Ambiente')
         tarea = st.text_input('Tarea')
         responsable = st.text_input('Responsable')
+        fecha = st.date_input('Fecha')
         submit_button = st.form_submit_button(label='Agregar')
 
     if submit_button and ambiente and tarea and responsable:
-        new_data = {'Ambiente': ambiente, 'Tarea': tarea, 'Responsable': responsable}
+        new_data = {'Ambiente': ambiente, 'Tarea': tarea, 'Responsable': responsable, 'Fecha': fecha}
         df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
         guardar_datos(df)
         st.success('Nueva tarea agregada.')
